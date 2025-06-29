@@ -1,30 +1,24 @@
-<script setup>
-import HelloWorld from './components/HelloWorld.vue'
-</script>
-
 <template>
-  <div>
-    <a href="https://vite.dev" target="_blank">
-      <img src="/vite.svg" class="logo" alt="Vite logo" />
-    </a>
-    <a href="https://vuejs.org/" target="_blank">
-      <img src="./assets/vue.svg" class="logo vue" alt="Vue logo" />
-    </a>
+  <div class="container-full">
+    <div class="layout__content">
+		<SectionHeader />
+		<SectionHero />
+		<ServicesSection />
+		<TargetAudienceSection />
+		<ExploreMarkets />
+		<SectionRegion />
+    </div>
+		<SectionFooter />
   </div>
-  <HelloWorld msg="Vite + Vue" />
 </template>
 
-<style scoped>
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
-</style>
+<script setup>
+
+import SectionFooter from './sections/SectionFooter.vue'
+import SectionHeader from './sections/SectionHeader.vue'
+import SectionHero from './sections/SectionHero.vue'
+import ServicesSection from './sections/ServicesSection.vue'
+import TargetAudienceSection from './sections/TargetAudienceSection.vue'
+import ExploreMarkets from './sections/ExploreMarkets.vue'
+import SectionRegion from './sections/SectionRegion.vue'
+</script>

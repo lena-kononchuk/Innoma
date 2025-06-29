@@ -1,0 +1,78 @@
+@import (css) '/node_modules/normalize.css/normalize.css';
+@import (css) '/node_modules/flexboxgrid/css/flexboxgrid.min.css';
+@import (css) '/node_modules/hamburgers/dist/hamburgers.min.css';
+@import (css) '/node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+@import (css) '/node_modules/swiper/swiper-bundle.min.css';
+
+
+@import './form/input';
+@import './form/button';
+
+@import './core/responsive';
+@import './core/variables';
+@import './core/basics';
+@import './core/basics';
+
+
+@import './blocks/card';
+@import './blocks/dropdown';
+@import './blocks/background';
+@import './blocks/logo';
+@import './blocks/section';
+@import './blocks/typography';
+@import './blocks/wrapper';
+@import './blocks/avatar';
+@import './blocks/header';
+@import './blocks/footer';
+@import './blocks/image';
+@import './blocks/link';
+
+html,
+body,
+#app {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+}
+
+body,
+html {
+
+	background-color: @white;
+	min-width: 320px;
+	font-size: @baseFontSize;
+	font-family: 'Montserrat', sans-serif;
+	font-weight: normal;
+	color: @white;
+
+
+	overflow-x: hidden;
+}
+
+.container-full {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+
+}
+
+.layout__content {
+	flex: 1 0 auto;
+	flex-grow: 1;
+}
+
+
+
+
+/* Псевдоэлемент с параллакс-фоном */
+.parallax::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  transform: translateZ(-1px) scale(1.5);
+  z-index: -1;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+

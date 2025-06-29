@@ -1,0 +1,40 @@
+.header
+{
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: @headerHeight;
+  z-index: 100;
+
+  min-width: 320px;
+  padding-top: (@gap / 2);
+  padding-bottom: (@gap / 2);
+
+  user-select: none;
+
+  background: transparent;
+
+	&__menu {
+
+		display: flex;
+    // margin: 0 0 -20px;
+    padding: 0;
+    list-style: none;
+
+	}
+	&__item{
+		position: relative;
+    white-space: nowrap;
+	}
+
+	&__link{
+    text-decoration: none;
+    color: @white;
+		flex-direction: column;
+    justify-content: center;
+    height: 100%;
+
+
+	}
+}
