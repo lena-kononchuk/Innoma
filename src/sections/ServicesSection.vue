@@ -2,7 +2,7 @@
   <div class="section">
     <div class="wrapper">
       <div class="animated-group">
-        <div class="h3 uppercase box3x blue">Наші послуги</div>
+        <div class="h3  box3x blue">Наші послуги</div>
 
         <div class="row box3x">
           <div class="col-xs-12 col-sm-7">

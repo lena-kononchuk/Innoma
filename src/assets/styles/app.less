@@ -26,6 +26,7 @@
 @import './blocks/footer';
 @import './blocks/image';
 @import './blocks/link';
+@import './blocks/geo';
 
 html,
 body,
@@ -44,6 +45,7 @@ html {
 	font-family: 'Montserrat', sans-serif;
 	font-weight: normal;
 	color: @white;
+	line-height: 25px;
 
 
 	overflow-x: hidden;
@@ -64,7 +66,6 @@ html {
 
 
 
-/* Псевдоэлемент с параллакс-фоном */
 .parallax::after {
   content: "";
   position: absolute;

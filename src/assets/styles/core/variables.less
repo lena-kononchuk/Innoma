@@ -1,6 +1,7 @@
 
 @white: #FFFFFF;
 @black: #000000;
+@blackLight: #232323;
 @blue: #1178B2;
 @blueLight: fade(@blue, 50%);
 @grey: #484848;
@@ -32,8 +33,11 @@
 .black{
 	color: @black;
 }
+.black-light{
+	color: @blackLight;
+}
 .blue-light{
-	color: @blueLight;
+	color: @blueLight !important;
 }
 .grey{
 	color: @grey;
@@ -52,6 +56,10 @@
 }
 .green-bg{
 	background-color: @green;
+}
+
+.blue-bg{
+	background-color:@blueLight ;
 }
 .gap-small{
 	gap:( @gap /2);

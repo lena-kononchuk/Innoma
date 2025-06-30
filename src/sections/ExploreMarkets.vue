@@ -12,7 +12,7 @@
     <div class="section section--large">
     <div class="wrapper relative">
       <div class="center-xs">
-        <div class="h3 box uppercase green-bg">
+        <div class="h3 box  green-bg">
           Навчіться досліджувати іноземні ринки
           і відкрийте нові можливості для свого бізнесу
         </div>

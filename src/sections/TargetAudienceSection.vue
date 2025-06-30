@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="wrapper">
-			<div class="h3 uppercase box2x blue">Для кого ми?</div>
+			<div class="h3  box2x blue">Для кого ми?</div>
 			<div class="row center-xs">
 			<div class="col-xs-10 col-sm-4" v-for="item in cards" :key="item.id" style="margin-bottom: 20px;">
 				<div class="card">
