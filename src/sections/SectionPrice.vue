@@ -11,7 +11,7 @@
           <div class="card flex-vertical">
             <div class="card__icon--large">
               <img :src="item.icon" alt="icon" class="icon" />
-              <span>{{ index + 1 }}</span>
+              <!-- <span>{{ index + 1 }}</span> -->
             </div>
 						<div class="subtitle bold black" style="white-space: pre-wrap;">
 							{{ item.title }}

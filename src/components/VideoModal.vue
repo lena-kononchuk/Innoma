@@ -1,76 +1,68 @@
 <template>
   <section class="video-section">
-    <div class="wrapper" ref="videoSection">
-      <div class="video-wrapper">
-        <iframe
-          v-if="isVisible"
-          :src="videoUrl"
-          frameborder="0"
-          allow="autoplay; fullscreen; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-        <div v-else class="video-placeholder">
-          Відео завантажується...
+    <div class="wrapper">
+      <div class="video-box" @click="playVideo" v-if="!isPlaying">
+        <div class="overlay flex center-xs middle-xs">
+			<div class="flex-vertical middle-xs">
+				<span>Про акселераційну програму</span>
+				<button class="button button__circle" aria-label="Play video" ><i class="fa-solid fa-play h5"></i></button>
+				</div>
+
         </div>
       </div>
+      <iframe
+        v-else
+        class="video-frame"
+        :src="videoUrl"
+        frameborder="0"
+        allow="autoplay; fullscreen; picture-in-picture"
+        allowfullscreen
+      ></iframe>
     </div>
   </section>
 </template>
 
 <script setup>
-import { ref, onMounted, onBeforeUnmount } from 'vue'
+import { ref } from 'vue'
 
-const videoSection = ref(null)
-const isVisible = ref(false)
-
-const videoId = 'Pa0mdpXcHx8'
+const isPlaying = ref(false)
+const videoId = 'Twg6UcBkIds'
 const videoUrl = `https://www.youtube.com/embed/${videoId}?autoplay=1&mute=1`
 
-function onIntersection(entries) {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      isVisible.value = true
-    }
-  })
+function playVideo() {
+  isPlaying.value = true
 }
-
-onMounted(() => {
-  const observer = new IntersectionObserver(onIntersection, { threshold: 0.5 })
-  if (videoSection.value) observer.observe(videoSection.value)
-})
-
-onBeforeUnmount(() => {
-  if (videoSection.value) observer.unobserve(videoSection.value)
-})
 </script>
 
 <style scoped>
-.wrapper iframe {
-  width: 100%;
-  height: 550px;
-  display: block;
-  border: none;
-}
-.video-wrapper {
-  width: 100%;
-  height: 100%;
+.wrapper {
+  max-width: 100%;
+  position: relative;
+  aspect-ratio: 16 / 9;
 }
 
-iframe {
-  width: 100%;
-  height: 100%;
-  border: none;
-}
-
-.video-placeholder {
+.video-box {
   width: 100%;
   height: 100%;
   background: #000;
-  color: #fff;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.overlay {
+  color: white;
   font-size: 1.2rem;
+  text-align: center;
+  z-index: 2;
+}
+
+
+.video-frame {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 </style>
-

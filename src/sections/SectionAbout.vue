@@ -1,7 +1,7 @@
 <template>
 	<section class="section">
 		<div class="wrapper">
-			<div class="h3  box-small blue">Хто ми?</div>
+			<div class="h3  box2x blue">Хто ми?</div>
 
 			<div class="row box3x">
 				<div class="col-xs-12 col-sm-5">

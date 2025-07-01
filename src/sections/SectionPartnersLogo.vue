@@ -1,7 +1,7 @@
 <template>
   <section class="section">
     <div class="wrapper">
-      <div class="h3 box-small blue">Наші партнери</div>
+      <div class="h3 box2x blue">Наші партнери</div>
       <div class="row">
         <div class="col-xs-3 col-sm-3" v-for="(pair, i) in logoPairs" :key="i">
           <div class="card__partners" v-for="logo in pair" :key="logo">

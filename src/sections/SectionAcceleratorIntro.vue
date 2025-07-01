@@ -1,7 +1,7 @@
 <template>
   <section class="section" ref="videoSection">
     <div class="wrapper">
-      <div class="h3  box-small blue">Про акселератор IT бізнесу</div>
+      <div class="h3  box2x blue">Про акселератор IT бізнесу</div>
 
       <div class="row center-xs box2x">
         <div class="col-xs-12 col-sm-4" v-for="item in cards" :key="item.id">

@@ -6,7 +6,7 @@
 			<div class="col-xs-10 col-sm-4" v-for="item in cards" :key="item.id" style="margin-bottom: 20px;">
 				<div class="card">
 					<div class="uppercase title light large">{{ item.id < 10 ? '0' + item.id : item.id }}</div>
-					<div class="subtitle black">{{ item.title }}</div>
+					<div class="subtitle black box-smaller">{{ item.title }}</div>
 					<div class="text-small black">{{ item.text }}</div>
 				</div>
 			</div>

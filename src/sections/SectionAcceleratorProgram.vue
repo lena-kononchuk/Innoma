@@ -1,12 +1,16 @@
 <template>
 	<div class="section">
 		<div class="wrapper">
-			<div class="h3  box-small blue">Програма акселератора</div>
+			<div class="h3 box2x blue">Програма акселератора</div>
 
 			<div class="module box" v-for="(mod, i) in modules" :key="i">
-				<div class="module__header black flex" @click="toggle(i)">
+				<div class="module__header black flex middle-xs" @click="toggle(i)">
 					<span class="blue bold">{{ mod.module }}</span>
-					<div class="black">{{ mod.title }}</div>
+					<div class="black grow">{{ mod.title }}</div>
+					<i
+					class="fa-solid fa-chevron-down"
+					:class="{ 'rotated': activeIndex === i }"
+				></i>
 				</div>
 
 				<div class="module__topics" v-if="activeIndex === i">
@@ -99,11 +103,6 @@ const modules = [
 		title: 'Відкриття юридичної особи. Можливості для стартапів',
 		topics: []
 	},
-	{
-		module: 'Демо день',
-		title: '',
-		topics: []
-	}
 ]
 
 
@@ -133,5 +132,9 @@ const modules = [
 	color: #2D2D2D;
 	background: #fff;
 
+}
+.rotated {
+  transform: rotate(180deg);
+  transition: transform 0.3s ease;
 }
 </style>

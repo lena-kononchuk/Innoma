@@ -1,22 +1,19 @@
 <template>
-  <section class="section swiper">
+  <section class="section swiper relative">
     <div class="wrapper">
-      <div class="slider-title">Експерти та трекери програми</div>
+    	<div class="h3  box2x blue">Експерти і трекери програм</div>
 
-      <div class="swiper-navigation">
-        <button class="swiper-button-prev"><i class="fa-solid fa-circle-arrow-left"></i></button>
-        <button class="swiper-button-next"><i class="fa-solid fa-circle-arrow-right"></i></button>
+      <div class="swiper-navigation box">
+        <button class="custom-prev"><i class="fa fa-arrow-left white"></i></button>
+        <button class="custom-next"><i class="fa fa-arrow-right white"></i></button>
       </div>
-
-      <Swiper
+			<div class="swiper__wrapper">
+				<Swiper
         :modules="[Pagination, Navigation]"
         :slides-per-view="4"
         :loop="true"
-        :navigation="{
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev'
-        }"
-        class="mySwiper swiper__wrapper"
+        :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }"
+        class="mySwiper"
       >
         <SwiperSlide v-for="(expert, i) in experts" :key="i">
           <div class="slide center-xs">
@@ -26,19 +23,19 @@
           </div>
         </SwiperSlide>
       </Swiper>
+			</div>
     </div>
   </section>
 </template>
 
-
 <script setup>
+import { ref, onMounted } from 'vue'
 import { Swiper, SwiperSlide } from 'swiper/vue'
-import { Pagination, Navigation } from 'swiper/modules'  
+import { Pagination, Navigation } from 'swiper/modules'
 
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
-
 const experts = [
   {
     name: 'Юрій Кім',
@@ -64,6 +61,11 @@ const experts = [
     name: 'Фатімі Юсуф',
     description: 'Розробка стратегій виходу на нові ринки з фокусом на локальні особливості',
     logo: '/images/avatar/experts3.png',
+  },
+	{
+    name: 'Ешлі Абрамс',
+    description: 'Аналіз ринку і визначення ключових клієнтських сегментів',
+    logo: '/images/avatar/experts2.png',
   },
 ]
 </script>
@@ -102,7 +104,7 @@ const experts = [
 
 .swiper-button-prev:hover,
 .swiper-button-next:hover {
-  color: #007BFF; /* пример hover цвета */
+  color: #007BFF; 
 }
 
 </style>

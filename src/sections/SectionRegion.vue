@@ -1,7 +1,7 @@
 <template>
 	<section class="geo">
 		<div class="wrapper">
-			<div class="h3  box3x blue">Географія нашої діяльності</div>
+			<div class="h3  box2x blue">Географія нашої діяльності</div>
 
 			<ul class="geo__tabs">
 				<li v-for="tab in tabs" :key="tab" :class="['geo__tab', { 'geo__tab--active': currentTab === tab }]"

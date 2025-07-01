@@ -8,7 +8,7 @@
 						<div class="h1 box">Запустіть <br>
 						<span class="green-bg">технологічний IT-бізнес </span><br>
 							на міжнародних ринках</div>
-						<div class="box">Відкрито набір заявок на акселератор</div>
+						<div class="box white" >Відкрито набір заявок на акселератор</div>
 
 						<button class="button button--primary" type="button">Подати заявку</button>
 					</div>
