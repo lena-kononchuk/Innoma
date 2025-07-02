@@ -1,6 +1,6 @@
 <template>
   <section
-    class="section blue-bg background"
+    class="section blue-bg background" v-scroll-animate
     :style="{ backgroundImage: 'url(/images/partner.jpg)' }"
   >
     <div class="wrapper">

@@ -1,5 +1,5 @@
 <template>
-	<section class="geo">
+	<section class="geo" id="geo-section" v-scroll-animate>
 		<div class="wrapper">
 			<div class="h3  box2x blue">Географія нашої діяльності</div>
 
@@ -21,7 +21,7 @@
 							<div class="black grow">
 								{{ countries[currentTab] }}
 							</div>
-							<button class="button button--primary" type="button">Вихід на ринок</button>
+							<button class="button button--primary" type="button" data-scroll-to="price">Вихід на ринок</button>
 							<div class="flex middle-xs">
 							<img :src="managers[currentTab].avatar" :alt="'Менеджер ' + managers[currentTab].name" class="avatar avatar--small" />
 							<div>

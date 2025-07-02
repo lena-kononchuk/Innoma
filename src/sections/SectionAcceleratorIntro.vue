@@ -1,5 +1,5 @@
 <template>
-  <section class="section" ref="videoSection">
+  <section class="section" ref="videoSection"  id="accelerator" v-scroll-animate>
     <div class="wrapper">
       <div class="h3  box2x blue">Про акселератор IT бізнесу</div>
 

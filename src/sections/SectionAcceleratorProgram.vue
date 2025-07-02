@@ -1,5 +1,5 @@
 <template>
-	<div class="section">
+	<div class="section" v-scroll-animate >
 		<div class="wrapper">
 			<div class="h3 box2x blue">Програма акселератора</div>
 
@@ -23,7 +23,7 @@
 					</div>
 				</div>
 			</div>
-			<button class="button button--primary">Отримати програму</button>
+			<button class="button button--primary" data-scroll-to="program">Отримати програму</button>
 		</div>
 	</div>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section" v-scroll-animate id="program">
     <div class="wrapper">
 			<div class="h3  box2x blue">Що ви отримаєте в результаті?</div>
 			<div class="row center-xs">

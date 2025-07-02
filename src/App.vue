@@ -40,6 +40,9 @@
 </template>
 
 <script setup>
+import gsap from 'gsap'
+
+
 
 import SectionFooter from './sections/SectionFooter.vue'
 import SectionHeader from './sections/SectionHeader.vue'
@@ -58,5 +61,41 @@ import SectionMarkets from './sections/SectionMarkets.vue'
 import Slider from './components/Slider.vue'
 import ContactForm from './components/ContactForm.vue'
 import SectionNews from './sections/SectionNews.vue'
+
+
+
+
+document.addEventListener('click', event => {
+  const btn = event.target.closest('a[href^="#"]')
+  if (!btn) return
+  const targetId = btn.getAttribute('href').slice(1)
+  const targetEl = document.getElementById(targetId)
+  if (!targetEl) return
+
+  event.preventDefault()
+  targetEl.scrollIntoView({ behavior: 'smooth' })
+
+  gsap.fromTo(targetEl, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 })
+
+  const rows = targetEl.querySelectorAll('.row, .row-reverse')
+  rows.forEach(row => {
+    row.setAttribute('data-anchor-activated', 'true')
+
+    const bounds = row.getBoundingClientRect()
+    if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+      gsap.fromTo(row, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 })
+    } else {
+      const animateOnScroll = () => {
+        const updated = row.getBoundingClientRect()
+        if (updated.top < window.innerHeight && updated.bottom > 0) {
+          gsap.fromTo(row, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 })
+          window.removeEventListener('scroll', animateOnScroll)
+        }
+      }
+      window.addEventListener('scroll', animateOnScroll)
+    }
+  })
+})
+
 
 </script>

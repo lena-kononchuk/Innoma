@@ -1,5 +1,5 @@
 <template>
-  <div class="section">
+  <div class="section" v-scroll-animate  id="services">
     <div class="wrapper">
       <div class="animated-group">
         <div class="h3  box2x blue">Наші послуги</div>
@@ -15,7 +15,7 @@
                   Онлайн-програма акселерації дозволить вашій команді вийти на глобальні ринки.
                   Ви зможете презентувати проєкт міжнародним інвесторам і партнерам.
                 </div>
-                <button class="button button--primary" type="button">Дізнатись більше</button>
+                <button class="button button--primary" type="button" data-scroll-to="geo-section">Дізнатись більше</button>
               </div>
             </div>
           </div>
@@ -35,7 +35,7 @@
                 <div class="black text box">
                   Онлайн програма акселерації IT-бізнесу дозволить вашій команді відкрити нові горизонти та можливості для бізнесу на глобальних ринках. В результаті програми ви отримаєте можливість презентувати свій проєкт міжнародним інвесторам та локальним партнерам.
                 </div>
-                <button class="button button--primary" type="button">Дізнатись більше</button>
+                <button class="button button--primary" type="button" data-scroll-to="accelerator">Дізнатись більше</button>
               </div>
             </div>
           </div>
@@ -46,31 +46,23 @@
   </div>
 </template>
 <script setup>
-import { onMounted, nextTick } from 'vue'
+import { onMounted, onBeforeUnmount, nextTick, inject } from 'vue'
 import gsap from 'gsap'
 import ScrollTrigger from 'gsap/ScrollTrigger'
 
-onMounted(async () => {
-  await nextTick()
-  gsap.registerPlugin(ScrollTrigger)
+const scrollToElement = inject('scrollToElement')
 
-  const rows = document.querySelectorAll('.row, .row-reverse')
-  rows.forEach(row => {
-    gsap.fromTo(
-      row,
-      { opacity: 0, y: 40 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        ease: 'power2.out',
-        scrollTrigger: {
-          trigger: row,
-          start: 'top 85%',
-          toggleActions: 'play none none reverse',
-        },
-      }
-    )
-  })
+
+function handleClick(event) {
+  const button = event.target.closest('[data-scroll-to]')
+  if (!button) return
+  const targetId = button.dataset.scrollTo
+  if (targetId && scrollToElement) {
+    scrollToElement(targetId)
+  }
+}
+
+onBeforeUnmount(() => {
+  document.removeEventListener('click', handleClick)
 })
 </script>

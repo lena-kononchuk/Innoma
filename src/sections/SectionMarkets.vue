@@ -1,5 +1,5 @@
 <template>
-  <div class="hero-section">
+  <div class="hero-section" >
     <div
       class="background background__small ukiyo"
       ref="backgroundImage"

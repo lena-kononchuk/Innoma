@@ -1,5 +1,5 @@
 <template>
-  <section class="section">
+  <section class="section" v-scroll-animate>
     <div class="wrapper">
 			<div class="h3  box2x blue">Для кого ми?</div>
 			<div class="row center-xs">

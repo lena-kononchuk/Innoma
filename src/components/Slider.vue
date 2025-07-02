@@ -1,11 +1,11 @@
 <template>
-  <section class="section swiper relative">
+  <section class="section swiper relative" v-scroll-animate>
     <div class="wrapper">
     	<div class="h3  box2x blue">Експерти і трекери програм</div>
 
       <div class="swiper-navigation box">
-        <button class="custom-prev"><i class="fa fa-arrow-left white"></i></button>
-        <button class="custom-next"><i class="fa fa-arrow-right white"></i></button>
+        <button class="custom-prev pointer"><i class="fa fa-arrow-left white"></i></button>
+        <button class="custom-next pointer"><i class="fa fa-arrow-right white"></i></button>
       </div>
 			<div class="swiper__wrapper">
 				<Swiper
