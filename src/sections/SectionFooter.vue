@@ -10,7 +10,7 @@
           <div class="text-small">Всі права захищено</div>
         </div>
 
-        <nav class="flex between-xs middle-xs" aria-label="Footer navigation">
+        <nav class="flex between-xs middle-xs hide-xs show-sm" aria-label="Footer navigation">
           <div class="flex end-xs small">
             <a class="link" href="#about">Хто ми?</a>
             <a class="link" href="#services">Послуги</a>

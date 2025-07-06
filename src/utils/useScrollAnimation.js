@@ -47,53 +47,62 @@ export default {
       onEnter: animateRows
     })
 
-    const handleClick = event => {
-      const btn = event.target.closest('[data-scroll-to]')
-      if (!btn) return
-      const targetId = btn.dataset.scrollTo
-      const targetEl = document.getElementById(targetId)
-
-      if (targetEl) {
-        event.preventDefault()
-
-        // mark all .row elements inside the target section as anchor-triggered
-        const targetRows = targetEl.querySelectorAll('.row, .row-reverse')
-        targetRows.forEach(row => {
-          row.setAttribute('data-anchor-activated', 'true')
-
-          // 💣 remove existing ScrollTriggers tied to this row
-          ScrollTrigger.getAll()
-            .filter(t => t.trigger === row)
-            .forEach(trigger => trigger.kill())
-
-          //  animate manually
-          gsap.fromTo(
-            row,
-            { opacity: 0, y: 40 },
-            {
-              opacity: 1,
-              y: 0,
-              duration: 1,
-              ease: 'power2.out'
-            }
-          )
-        })
-
-        // scroll and animate the section itself (optional)
-        targetEl.scrollIntoView({ behavior: 'smooth' })
-
-        gsap.fromTo(
-          targetEl,
-          { opacity: 0, y: 40 },
-          {
-            opacity: 1,
-            y: 0,
-            duration: 1,
-            ease: 'power2.out'
-          }
-        )
-      }
-    }
+		const handleClick = event => {
+			if (!el.contains(event.target)) return // prevent cross-section clicks
+		
+			const anchor = event.target.closest('a[href^="#"]')
+			const btn = event.target.closest('[data-scroll-to]')
+			
+			let targetId = null
+			
+			if (anchor) {
+				targetId = anchor.getAttribute('href')?.slice(1)
+			} else if (btn) {
+				targetId = btn.dataset.scrollTo
+			}
+		
+			if (!targetId) return
+		
+			const targetEl = document.getElementById(targetId)
+			if (!targetEl) return
+		
+			event.preventDefault()
+		
+			targetEl.scrollIntoView({ behavior: 'smooth' })
+		
+			gsap.fromTo(targetEl, { opacity: 0, y: 40 }, {
+				opacity: 1, y: 0, duration: 1, ease: 'power2.out'
+			})
+		
+			const targetRows = targetEl.querySelectorAll('.row, .row-reverse')
+			targetRows.forEach(row => {
+				row.setAttribute('data-anchor-activated', 'true')
+		
+				ScrollTrigger.getAll()
+					.filter(t => t.trigger === row)
+					.forEach(trigger => trigger.kill())
+		
+				const bounds = row.getBoundingClientRect()
+				if (bounds.top < window.innerHeight && bounds.bottom > 0) {
+					gsap.fromTo(row, { opacity: 0, y: 40 }, {
+						opacity: 1, y: 0, duration: 1, ease: 'power2.out'
+					})
+				} else {
+					const animateOnScroll = () => {
+						const updated = row.getBoundingClientRect()
+						if (updated.top < window.innerHeight && updated.bottom > 0) {
+							gsap.fromTo(row, { opacity: 0, y: 40 }, {
+								opacity: 1, y: 0, duration: 1, ease: 'power2.out'
+							})
+							window.removeEventListener('scroll', animateOnScroll)
+						}
+					}
+					window.addEventListener('scroll', animateOnScroll)
+				}
+			})
+		}
+		
+		
 
     el.addEventListener('click', handleClick)
     el._handleClick = handleClick

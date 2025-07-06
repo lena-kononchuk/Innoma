@@ -1,10 +1,10 @@
 <template>
-	<div class="section" v-scroll-animate >
+	<div class="section " v-scroll-animate >
 		<div class="wrapper">
-			<div class="h3 box2x blue">Програма акселератора</div>
+			<div class="h3 box2x blue center-xs start-md">Програма акселератора</div>
 
 			<div class="module box" v-for="(mod, i) in modules" :key="i">
-				<div class="module__header black flex middle-xs" @click="toggle(i)">
+				<div class="module__header black flex middle-xs center-xs start-md" @click="toggle(i)">
 					<span class="blue bold">{{ mod.module }}</span>
 					<div class="black grow">{{ mod.title }}</div>
 					<i
@@ -109,32 +109,3 @@ const modules = [
 
 </script>
 
-<style scoped>
-.module {
-	margin-bottom: 1rem;
-}
-
-.module__header {
-	background: white;
-	width: 100%;
-	padding: 1rem;
-	cursor: pointer;
-	border-radius: 6px;
-	box-shadow: 0px 0px 30px 0px #00000017;
-}
-.module__topics {
-	box-shadow: 0px 0px 30px 0px #00000017;
-}
-.module__topics .topic {
-	border-top: 1px solid #E9E9E9;
-	padding: 12px 16px;
-	font-size: 14px;
-	color: #2D2D2D;
-	background: #fff;
-
-}
-.rotated {
-  transform: rotate(180deg);
-  transition: transform 0.3s ease;
-}
-</style>

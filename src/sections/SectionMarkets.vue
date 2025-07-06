@@ -7,7 +7,7 @@
     >
       <div class="overlay"></div>
     </div>
-    <div class="section section--large">
+    <div class="section section--large center-xs start-md">
       <div class="wrapper relative">
         <div class="center-xs">
           <div class="h3 box green-bg white">

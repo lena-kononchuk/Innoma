@@ -1,8 +1,8 @@
 <template>
-	<section class="section blue-bg background" v-scroll-animate :style="{ backgroundImage: 'url(/images/partner.jpg)' }">
+	<section class="section blue-bg background" v-scroll-animate :style="{ backgroundImage: 'url(./images/partner.jpg)' }" id="contact">
 		<div class="wrapper">
 			<div class="row">
-				<div class="col-xs-12 col-sm-6">
+				<div class="col-xs-12 col-sm-6 box">
 					<div class="flex-center">
 						<div>
 							<div class="h3 white">Залишилися запитання?</div>
@@ -29,7 +29,7 @@
 					</div>
 				</div>
 
-				<div class="col-xs-12 col-sm-6">
+				<div class="col-xs-12 col-sm-5 col-sm-offset-1">
 					<div v-if="isSubmitted" class="text bold white center-xs middle-xs">
 						Дякуємо за вашу заявку!<br>
 						Наша команда зв'яжеться з вами найближчим часом.

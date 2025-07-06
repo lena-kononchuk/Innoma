@@ -1,7 +1,7 @@
 <template>
   <section class="section swiper relative" v-scroll-animate>
     <div class="wrapper">
-    	<div class="h3  box2x blue">Експерти і трекери програм</div>
+    	<div class="h3  box2x blue center-xs start-md">Експерти і трекери програм</div>
 
       <div class="swiper-navigation box">
         <button class="custom-prev pointer"><i class="fa fa-arrow-left white"></i></button>
@@ -12,6 +12,7 @@
         :modules="[Pagination, Navigation]"
         :slides-per-view="4"
         :loop="true"
+				:breakpoints="breakpoints"
         :navigation="{ nextEl: '.custom-next', prevEl: '.custom-prev' }"
         class="mySwiper"
       >
@@ -40,34 +41,50 @@ const experts = [
   {
     name: 'Юрій Кім',
     description: 'Проведення дослідження цільової аудиторії для формування Product market fit',
-    logo: '/images/avatar/experts1.png',
+    logo: './images/avatar/experts1.png',
   },
   {
     name: 'Ешлі Абрамс',
     description: 'Аналіз ринку і визначення ключових клієнтських сегментів',
-    logo: '/images/avatar/experts2.png',
+    logo: './images/avatar/experts2.png',
   },
   {
     name: 'Фатімі Юсуф',
     description: 'Розробка стратегій виходу на нові ринки з фокусом на локальні особливості',
-    logo: '/images/avatar/experts3.png',
+    logo: './images/avatar/experts3.png',
   },
   {
     name: 'Майкл Донован',
     description: 'Оптимізація продукту на основі зворотного зв’язку від користувачів',
-    logo: '/images/avatar/experts4.png',
+    logo: './images/avatar/experts4.png',
   },
   {
     name: 'Фатімі Юсуф',
     description: 'Розробка стратегій виходу на нові ринки з фокусом на локальні особливості',
-    logo: '/images/avatar/experts3.png',
+    logo: './images/avatar/experts3.png',
   },
 	{
     name: 'Ешлі Абрамс',
     description: 'Аналіз ринку і визначення ключових клієнтських сегментів',
-    logo: '/images/avatar/experts2.png',
+    logo: './images/avatar/experts2.png',
   },
 ]
+
+const breakpoints = {
+  0: {
+    slidesPerView: 1,
+  },
+  576: {
+    slidesPerView: 2,
+  },
+  768: {
+    slidesPerView: 3,
+  },
+  992: {
+    slidesPerView: 4,
+  }
+}
+
 </script>
 
 

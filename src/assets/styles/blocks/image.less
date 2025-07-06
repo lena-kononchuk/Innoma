@@ -1,9 +1,21 @@
 .image{
 
 	&--middle{
-		aspect-ratio: 495 / 319; 
-    background-size: cover;
-    background-position: center;
+		aspect-ratio: 495 / 319;
+		background-size: cover;
+		background-position: center;
+		width: 495px;
+	
+		.sm({
+			width: 386px;
+			margin: 0 auto
+		});
+	
+		.xs({
+			width: 274.09px;
+		});
+	
+		max-width: 100%; 
 
 	}
 

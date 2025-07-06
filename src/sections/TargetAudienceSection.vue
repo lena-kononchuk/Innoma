@@ -1,9 +1,9 @@
 <template>
-  <section class="section" v-scroll-animate>
+  <section class="section center-xs start-md" v-scroll-animate>
     <div class="wrapper">
 			<div class="h3  box2x blue">Для кого ми?</div>
 			<div class="row center-xs">
-			<div class="col-xs-10 col-sm-4" v-for="item in cards" :key="item.id" style="margin-bottom: 20px;">
+			<div class="col-xs-10 col-sm-6 col-md-4 margin-bottom" v-for="item in cards" :key="item.id">
 				<div class="card">
 					<div class="uppercase title light large">{{ item.id < 10 ? '0' + item.id : item.id }}</div>
 					<div class="subtitle black box-smaller">{{ item.title }}</div>

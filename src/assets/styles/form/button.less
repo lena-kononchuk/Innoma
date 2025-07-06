@@ -7,7 +7,7 @@
 
   display: inline-block;
   height: @buttonSize;
-  padding: 20px 45px;
+  padding: 0 25px;
   // line-height: (@buttonSize - 2px);
   box-sizing: border-box;
   text-align: center;
@@ -50,7 +50,7 @@
 	}
 
 	&__circle {
-		width: 90px;
+		width: 90px !important;
 		height: 90px;
 		background-color: @blue;
 		border-radius: 50%;
@@ -59,11 +59,25 @@
 		justify-content: center;
 		cursor: pointer;
 		border: none;
+		.xs({
+			width: 60px !important;
+    height: 60px;
+		 });
+
+
 	
 
 		::hover {
 			background-color: #ccc;
 		}
 	}
+	&--full{
+		width: 100%;
+		margin-top: 10px;
+	}
+
+	.xxs({
+		width: 100%;
+	 });
 	
 }

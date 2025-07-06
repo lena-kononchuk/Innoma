@@ -8,17 +8,30 @@
 		list-style: none;
 		padding: 0;
 		margin-bottom: 2rem;
+		flex-wrap: nowrap;
+		.sm({
+			flex-wrap: nowrap;
+		 });
+
+		.xs({
+			flex-wrap: wrap;
+		 });
+		
 	}
 
 	&__tab {
 		flex: 1;
-		text-align: center;
-		padding: 0.75rem 1rem;
-		background: #eee;
-		border-radius: 5px;
-		color: @grey;
-		cursor: pointer;
-		transition: background 0.3s;
+    text-align: center;
+    padding: 0.75rem 1rem;
+    background: #eee;
+    border-radius: 5px;
+    color: #484848;
+    cursor: pointer;
+    display: flex
+;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s;
 	}
 	&__tab--active {
 		background: @blue;
@@ -53,10 +66,22 @@
 		background-color: @white;
 		border-radius: 10px;
 		overflow: hidden;
+		order: 2;
+
+
+		.xs({
+			height: 134px;
+		 });
+
+		 .xs({
+			 order: 1; 
+		 });
+
 	}
 
 
 	&__card button.button--large {
+
 		display: flex;
 		flex-direction: column; 
 		align-items: center;
@@ -72,6 +97,7 @@
 		text-align: center;
 		padding: 1em;
 		transition: background-color 0.3s ease;
+	
 
 		i.fa-download {
 			margin-bottom: 20px;
@@ -81,4 +107,15 @@
 	&__card button.button--large:hover {
 		background-color: @greenLight;
 	}
+
+
+	& ~  .button.button--primary{
+		order: 1;
+
+
+		.xs({
+			order: 2;
+		 });
+	}
 }
+

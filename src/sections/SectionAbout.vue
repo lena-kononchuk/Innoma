@@ -1,13 +1,13 @@
 <template>
 	<section class="section" v-scroll-animate id="about">
 		<div class="wrapper">
-			<div class="h3  box2x blue">Хто ми?</div>
+			<div class="h3  box2x blue center-xs start-md">Хто ми?</div>
 
 			<div class="row box3x">
-				<div class="col-xs-12 col-sm-5">
-					<div class="image image--middle" :style="{ backgroundImage: 'url(/images/about.png)' }"></div>
+				<div class="col-xs-12 col-sm-5 col-md-5 box">
+					<div class="image image--middle" :style="{ backgroundImage: 'url(./images/about.png)' }"></div>
 				</div>
-				<div class="col-xs-12 col-sm-6 col-sm-offset-1">
+				<div class="col-xs-12 col-sm-6 col-sm-offset-1 col-md-6 col-md-offset-1">
 					<div class="text middle-sm">
 						<div class="content box">
 							<div class="black text box">
@@ -23,10 +23,11 @@
 				</div>
 			</div>
 
+			<div class="card">
 			<div class="row box3x">
-				<div class="col-xs-12 col-sm-7">
-					<div class="text middle-sm">
-						<div class="content box">
+				<div class="col-xs-12 col-sm-7  col-sm-7">
+					<div class="text middle-sm around-xs"  style="flex-grow: 1; display: flex; flex-direction: column; justify-content: space-between;">
+						<div class="content ">
 							<div class="black text flex-vertical">
 								<div>Вітаю всіх! </div>
 								<div>
@@ -37,18 +38,18 @@
 									під запити стартапів. Всі акселератори виконувалися ради акселераторів і для досягнення КПЕ.
 								</div>
 								<div>
-								<span class="bold">Роман Гайн </span> <br>
+								<span class="bold box">Роман Гайн </span> <br>
 								Засновник INNOMA.VC</div>
 
 							</div>
 						</div>
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-5">
-					<div class="background background__avatar" :style="{ backgroundImage: 'url(/images/avatar/roman.png)' }"></div>
+				<div class="col-xs-12 col-sm-4 col-sm-offset-1 col-sm-4 col-md-offset-1">
+					<div class="background background__avatar" :style="{ backgroundImage: 'url(./images/avatar/roman.png)' }"></div>
 				</div>
 			</div>
-
+		</div>
 		</div>
 	</section>
 </template>

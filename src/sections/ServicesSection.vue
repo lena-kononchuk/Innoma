@@ -1,11 +1,11 @@
 <template>
-  <div class="section" v-scroll-animate  id="services">
+  <div class="section" v-scroll-animate  id="services" >
     <div class="wrapper">
-      <div class="animated-group">
+      <div class="animated-group center-xs start-md">
         <div class="h3  box2x blue">Наші послуги</div>
 
-        <div class="row box3x">
-          <div class="col-xs-12 col-sm-7">
+        <div class="row box2x">
+          <div class="col-xs-12 col-sm-12 col-md-7 col-text">
             <div class="text middle-sm">
               <div class="content box">
                 <div class="blue box">Аналітичні дослідження</div>
@@ -19,16 +19,16 @@
               </div>
             </div>
           </div>
-          <div class="col-xs-12 col-sm-5">
-            <div class="image image--middle" :style="{ backgroundImage: 'url(/images/services.png)' }"></div>
+          <div class="col-xs-12 col-sm-12 col-md-5 col-image">
+            <div class="image image--middle" :style="{ backgroundImage: 'url(./images/services.png)' }"></div>
           </div>
         </div>
 
         <div class="row row-reverse">
-          <div class="col-xs-12 col-sm-5">
-            <div class="image image--middle" :style="{ backgroundImage: 'url(/images/accelerator.png)' }"></div>
+          <div class="col-xs-12  col-md-5 box-smaller">
+            <div class="image image--middle" :style="{ backgroundImage: 'url(./images/accelerator.png)' }"></div>
           </div>
-          <div class="col-xs-12 col-sm-7">
+          <div class="col-xs-12  col-sm-12 col-md-7">
             <div class="text middle-sm">
               <div class="content box">
                 <div class="blue box">Онлайн акселератор для IT-бізнесу</div>
@@ -48,21 +48,5 @@
 <script setup>
 import { onMounted, onBeforeUnmount, nextTick, inject } from 'vue'
 import gsap from 'gsap'
-import ScrollTrigger from 'gsap/ScrollTrigger'
 
-const scrollToElement = inject('scrollToElement')
-
-
-function handleClick(event) {
-  const button = event.target.closest('[data-scroll-to]')
-  if (!button) return
-  const targetId = button.dataset.scrollTo
-  if (targetId && scrollToElement) {
-    scrollToElement(targetId)
-  }
-}
-
-onBeforeUnmount(() => {
-  document.removeEventListener('click', handleClick)
-})
 </script>

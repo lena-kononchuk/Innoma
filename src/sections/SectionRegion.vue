@@ -1,7 +1,7 @@
 <template>
 	<section class="geo" id="geo-section" v-scroll-animate>
 		<div class="wrapper">
-			<div class="h3  box2x blue">Географія нашої діяльності</div>
+			<div class="h3  box2x blue center-xs start-md">Географія нашої діяльності</div>
 
 			<ul class="geo__tabs">
 				<li v-for="tab in tabs" :key="tab" :class="['geo__tab', { 'geo__tab--active': currentTab === tab }]"
@@ -12,7 +12,7 @@
 
 			<div class="geo__section">
 				<div class="row">
-					<div class="col-xs-12 col-sm-5">
+					<div class="col-xs-12 col-sm-5 box">
 						<div class="geo__info flex-vertical ">
 							<div class="h5 black">
 								Чим цікавий <br />
@@ -21,7 +21,10 @@
 							<div class="black grow">
 								{{ countries[currentTab] }}
 							</div>
-							<button class="button button--primary" type="button" data-scroll-to="price">Вихід на ринок</button>
+							<div class="geo__button-wrap">
+								<button class="button button--primary hide-xxs show-xs" type="button" data-scroll-to="price">Вихід на ринок</button>
+							</div>
+							<!-- <button class="button button--primary" type="button" data-scroll-to="price">Вихід на ринок</button> -->
 							<div class="flex middle-xs">
 							<img :src="managers[currentTab].avatar" :alt="'Менеджер ' + managers[currentTab].name" class="avatar avatar--small" />
 							<div>
@@ -34,7 +37,7 @@
 					</div>
 
 
-					<div class="geo__cards col-xs-12 col-sm-7">
+					<div class="geo__cards col-xs-12 col-sm-7 box">
 						<div class="geo__card-list black f" v-if="regions[currentTab]">
 							<div v-for="(item, index) in regions[currentTab]" :key="index" :class="['geo__card flex middle-xs center-xs', {
 								'geo__card--active': item.active,
@@ -58,6 +61,8 @@
 							</div>
 						</div>
 					</div>
+
+					<button class="button button--primary hide-xs show-xxs" type="button" data-scroll-to="price">Вихід на ринок</button>
 
 				</div>
 			</div>
@@ -109,22 +114,22 @@ const managers = {
   'Близький Схід': {
     name: 'Фатіма Юсуф',
     role: 'Менеджер по ринку MENA',
-    avatar: '/images/avatar/experts3.png'
+    avatar: './images/avatar/experts3.png'
   },
   'Азія': {
     name: 'Юрій Кім',
     role: 'Менеджер по ринку Азії',
-    avatar: '/images/avatar/experts1.png'
+    avatar: './images/avatar/experts1.png'
   },
   'Латинська Америка': {
     name: 'Ешлі Абрамс',
     role: 'Менеджер по Лат. Америці',
-    avatar: '/images/avatar/experts2.png'
+    avatar: './images/avatar/experts2.png'
   },
   'Африка': {
     name: 'Майкл Донован',
     role: 'Менеджер по ринку Африки',
-    avatar: '/images/avatar/experts4.png'
+    avatar: './images/avatar/experts4.png'
   }
 }
 

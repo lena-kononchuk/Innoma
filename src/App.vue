@@ -5,11 +5,11 @@
 		<SectionHero />
 		<ServicesSection />
 		<TargetAudienceSection />
-		<SectionMarkets bgImage="/images/background/markets.jpg">
+		<SectionMarkets bgImage="./images/background/markets.jpg">
 			<template #title>Навчіться досліджувати іноземні ринки і відкрийте нові можливості для свого бізнесу</template>
 			<template #text>Наша команда допоможе вам вивчити ринки Близького Сходу, Азії, Латинської Америки та Африки</template>
 			<template #button>
-				<button class="button button--primary" type="button">Отримати консультацію</button>
+				<button class="button button--primary" type="button" data-scroll-to="contact">Отримати консультацію</button>
 			</template>
 		</SectionMarkets>
 		<SectionRegion />
@@ -21,7 +21,7 @@
 		<SectionAbout />
 		<Slider />
 		<SectionPartnersLogo />
-		<SectionMarkets bgImage="/images/background/partners.jpg">
+		<SectionMarkets bgImage="./images/background/partners.jpg">
 		<template #title>
 			Створюємо міжнародну спільноту експертів та партнерів
 		</template>
@@ -29,7 +29,7 @@
 			Якщо ви або ваш бізнес може бути корисним IT-командам при виході на міжнародні ринки, запрошуємо вас стати нашим партнером
 		</template>
 		<template #button>
-			<button class="button button--primary" type="button">Стати партнером</button>
+			<button class="button button--primary" type="button" data-scroll-to="contact">Стати партнером</button>
 		</template>
 		</SectionMarkets>
 		<SectionNews />
@@ -64,38 +64,6 @@ import SectionNews from './sections/SectionNews.vue'
 
 
 
-
-document.addEventListener('click', event => {
-  const btn = event.target.closest('a[href^="#"]')
-  if (!btn) return
-  const targetId = btn.getAttribute('href').slice(1)
-  const targetEl = document.getElementById(targetId)
-  if (!targetEl) return
-
-  event.preventDefault()
-  targetEl.scrollIntoView({ behavior: 'smooth' })
-
-  gsap.fromTo(targetEl, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 })
-
-  const rows = targetEl.querySelectorAll('.row, .row-reverse')
-  rows.forEach(row => {
-    row.setAttribute('data-anchor-activated', 'true')
-
-    const bounds = row.getBoundingClientRect()
-    if (bounds.top < window.innerHeight && bounds.bottom > 0) {
-      gsap.fromTo(row, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 })
-    } else {
-      const animateOnScroll = () => {
-        const updated = row.getBoundingClientRect()
-        if (updated.top < window.innerHeight && updated.bottom > 0) {
-          gsap.fromTo(row, { opacity: 0, y: 40 }, { opacity: 1, y: 0, duration: 1 })
-          window.removeEventListener('scroll', animateOnScroll)
-        }
-      }
-      window.addEventListener('scroll', animateOnScroll)
-    }
-  })
-})
 
 
 </script>
