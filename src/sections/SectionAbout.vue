@@ -5,7 +5,7 @@
 
 			<div class="row box3x">
 				<div class="col-xs-12 col-sm-5 col-md-5 box">
-					<div class="image image--middle" :style="{ backgroundImage: 'url(./images/about.png)' }"></div>
+					<div class="image image--middle"  v-lazy-bg="'./images/about.png'"></div>
 				</div>
 				<div class="col-xs-12 col-sm-6 col-sm-offset-1 col-md-6 col-md-offset-1">
 					<div class="text middle-sm">
@@ -46,7 +46,7 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-4 col-sm-offset-1 col-sm-4 col-md-offset-1">
-					<div class="background background__avatar" :style="{ backgroundImage: 'url(./images/avatar/roman.png)' }"></div>
+					<div class="background background__avatar" v-lazy-bg="'./images/avatar/roman.png'"></div>
 				</div>
 			</div>
 		</div>

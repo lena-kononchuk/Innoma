@@ -6,7 +6,7 @@
       <div class="row">
 				<div class="col-xs-12 col-sm-4 margin-bottom" v-for="(item, i) in news" :key="i">
 				<div class="shadow flex-vertical grow" style="gap: 0;">
-					<div class="background background__smaller" :style="{ backgroundImage: `url(${item.image})` }"></div>
+					<div class="background background__smaller" v-lazy-bg="item.image"></div>
 					<div class="card flex-vertical grow">
 						<div class="flex">
 							<i class="far fa-bookmark"></i>

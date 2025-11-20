@@ -26,7 +26,7 @@
 							</div>
 							<!-- <button class="button button--primary" type="button" data-scroll-to="price">Вихід на ринок</button> -->
 							<div class="flex middle-xs">
-							<img :src="managers[currentTab].avatar" :alt="'Менеджер ' + managers[currentTab].name" class="avatar avatar--small" />
+							<img loading="lazy" :src="managers[currentTab].avatar" :alt="'Менеджер ' + managers[currentTab].name" class="avatar avatar--small" />
 							<div>
 								<div class="text-small black bold">{{ managers[currentTab].name }}</div>
 								<div class="text-smaller black">{{ managers[currentTab].role }}</div>

@@ -5,7 +5,7 @@
       <div class="slider">
         <div class="slider-track">
           <div class="slider-items">
-            <img
+            <img loading="lazy"
               v-for="(logo, index) in extendedLogos"
               :key="index"
               :src="`./images/partners/${logo}`"

@@ -1,6 +1,6 @@
 <template>
   <header class="header wrapper flex middle-xs between-xs">
-    <a href="#" class="logo"></a>
+    <a href="#" class="logo" aria-label="Homepage" alt="Company Logo"></a>
     <ul class="header__menu start-xs center-xs grow gap">
       <li class="header__item">
         <a class="header__link nowrap" href="#about">Хто ми?</a>

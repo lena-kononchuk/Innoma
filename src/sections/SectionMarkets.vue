@@ -2,8 +2,7 @@
   <div class="hero-section" >
     <div
       class="background background__small ukiyo"
-      ref="backgroundImage"
-      :style="{ backgroundImage: `url('${bgImage}')` }"
+      ref="backgroundImage"  v-lazy-bg="bgImage"
     >
       <div class="overlay"></div>
     </div>

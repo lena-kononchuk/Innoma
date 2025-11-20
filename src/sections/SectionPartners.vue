@@ -1,7 +1,7 @@
 <template>
   <section
     class="section blue-bg background" v-scroll-animate
-    :style="{ backgroundImage: 'url(./images/partner.jpg)' }"
+		v-lazy-bg="'./images/partner.jpg'"
   >
     <div class="wrapper">
       <div class="row" style="height: 100%;">
@@ -23,7 +23,7 @@
               v-for="(logo, index) in logos"
               :key="index"
             >
-              <img :src="logo" alt="Partner Logo" />
+              <img loading="lazy" :src="logo" alt="Partner Logo" />
             </div>
         </div>
       </div>

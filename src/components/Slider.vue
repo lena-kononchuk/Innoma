@@ -4,8 +4,8 @@
     	<div class="h3  box2x blue center-xs start-md">Експерти і трекери програм</div>
 
       <div class="swiper-navigation box">
-        <button class="custom-prev pointer"><i class="fa fa-arrow-left white"></i></button>
-        <button class="custom-next pointer"><i class="fa fa-arrow-right white"></i></button>
+        <button class="custom-prev pointer" aria-label="Previous slide"><i class="fa fa-arrow-left white"></i></button>
+        <button class="custom-next pointer" aria-label="Next slide"><i class="fa fa-arrow-right white"></i></button>
       </div>
 			<div class="swiper__wrapper">
 				<Swiper
@@ -18,7 +18,7 @@
       >
         <SwiperSlide v-for="(expert, i) in experts" :key="i">
           <div class="slide center-xs">
-            <img :src="expert.logo" alt="avatar" class="avatar avatar--large box-smaller" />
+            <img loading="lazy" :src="expert.logo" alt="avatar" class="avatar avatar--large box-smaller" />
             <div class="black text bold box-smaller">{{ expert.name }}</div>
             <div class="black text-small box-smaller description">{{ expert.description }}</div>
           </div>

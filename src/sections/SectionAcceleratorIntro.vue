@@ -7,7 +7,7 @@
         <div class="col-xs-12 col-sm-4 margin-bottom" v-for="item in cards" :key="item.id">
           <div class="card card--large flex-vertical gap">
 						<div class="card__icon">
-							<img :src="item.icon" alt="" />
+							<img loading="lazy" :src="item.icon" alt="" />
 						</div>
             <div class="font black-light">{{ item.title }}</div>
           </div>

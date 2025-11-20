@@ -1,5 +1,5 @@
 <template>
-  <div class="section" v-scroll-animate  id="services" >
+  <div class="section" v-scroll-animate  id="services">
     <div class="wrapper">
       <div class="animated-group center-xs start-md">
         <div class="h3  box2x blue">Наші послуги</div>
@@ -20,13 +20,13 @@
             </div>
           </div>
           <div class="col-xs-12 col-sm-12 col-md-5 col-image">
-            <div class="image image--middle" :style="{ backgroundImage: 'url(./images/services.png)' }"></div>
+            <div class="image image--middle"  v-lazy-bg="'./images/services.png'"></div>
           </div>
         </div>
 
         <div class="row row-reverse">
           <div class="col-xs-12  col-md-5 box-smaller">
-            <div class="image image--middle" :style="{ backgroundImage: 'url(./images/accelerator.png)' }"></div>
+            <div class="image image--middle" v-lazy-bg="'./images/accelerator.png'"></div>
           </div>
           <div class="col-xs-12  col-sm-12 col-md-7">
             <div class="text middle-sm">
@@ -46,7 +46,9 @@
   </div>
 </template>
 <script setup>
-import { onMounted, onBeforeUnmount, nextTick, inject } from 'vue'
+import { onMounted, onBeforeUnmount, nextTick, inject, ref } from 'vue'
 import gsap from 'gsap'
+
+const showServices = ref(false)
 
 </script>
