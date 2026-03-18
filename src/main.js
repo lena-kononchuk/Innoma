@@ -10,7 +10,7 @@ import scrollAnimate from './utils/useScrollAnimation.js'
 
 const app = createApp(App)
 // scrollToGeo globally
-// app.directive('scroll-animate', scrollAnimate)
+app.directive('scroll-animate', scrollAnimate)
 app.directive('lazy-bg', LazyBg)
 app.component('scroll-parallax', ScrollParallax);
 app.mount('#app')
